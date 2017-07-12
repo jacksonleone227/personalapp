@@ -1,0 +1,21 @@
+<template name="friends">
+  <h1>My Friendlist</h1>
+  Add a friend:<br>
+  name: <input type="text" id="js-name"><br>
+  age: <input type="text" id="js-age"><br>
+  favorite color: <input type="text" id="js-favcolor"><br>
+  <input type="submit" class="btn btn-primary btn-sm" id="js-submit">
+  <hr>
+  <ul>
+    {{#each friend in friendlist}}
+      {{> friendinfo f=friend}}
+    {{/each}}
+  </ul>
+</template>
+
+<template name="friendinfo">
+  <li>
+    {{f.name}} is {{f.age}} years old and favorite color is {{f.favcolor}}
+  </li>
+  <br>
+</template>
